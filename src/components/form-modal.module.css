@@ -6,10 +6,11 @@
   padding: 15px;
   position: absolute;
   left: 50%;
-  transform: translate(-50%, 50%);
   top: 50%;
+  transform: translate(-50%, 50%);
   min-width: 350px;
   max-width: 420px;
+  z-index: 999;
 }
 .form-container > h1 {
   text-align: center;

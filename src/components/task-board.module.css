@@ -1,0 +1,60 @@
+.task-board-container {
+  background-color: #e5ecea;
+  border-radius: 5px;
+  padding: 10px;
+}
+.task-board-container > div:first-child {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.task-board-container > div:first-child > h1 {
+  font-weight: 400;
+  line-height: 0;
+}
+.task-board-container > div:first-child > span {
+  height: 30px;
+  width: 30px;
+  background: white;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #5a9e8b;
+}
+.task {
+  background-color: white;
+  border-radius: 8px;
+  padding: 5px;
+  position: relative;
+  margin-bottom: 1rem;
+}
+.task > h4 {
+  font-size: 25px;
+  line-height: 0;
+  font-weight: 500;
+}
+.task > p {
+  color: gray;
+}
+.task > button {
+  height: 25px;
+  width: 25px;
+  border-radius: 100%;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 900;
+  color: white;
+  background-color: tomato;
+  font-size: 19px;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  transition: all 300ms linear;
+}
+.task > button:hover {
+  background-color: red;
+}
