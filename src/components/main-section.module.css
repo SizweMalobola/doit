@@ -7,3 +7,7 @@
   font-size: 30px;
   font-weight: 400;
 }
+.main-section-container > div {
+  /* display: flex; */
+  /* justify-content: space-between; */
+}

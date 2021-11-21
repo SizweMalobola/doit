@@ -16,11 +16,40 @@ function Main() {
     });
     setTasks(filteredTasks);
   };
+  //
+  const isComplete = (containerName, index) => {
+    let tasksClone = [...tasks];
+    if (containerName === "Todo") {
+      tasksClone[index].complete = false;
+      setTasks(tasksClone);
+    } else {
+      tasksClone[index].complete = true;
+      setTasks(tasksClone);
+    }
+  };
   return (
     <main className={styles["main-section-container"]}>
       <h3>Tasks</h3>
       <FormModal addTask={addTask} />
-      <TaskBoard name="Todo" tasksArray={tasks} removeTask={removeTask} />
+      <div>
+        <TaskBoard
+          name="Todo"
+          tasksArray={tasks.filter((item) => {
+            return item.complete === false;
+          })}
+          removeTask={removeTask}
+          isComplete={isComplete}
+        />
+
+        <TaskBoard
+          name="Completed"
+          tasksArray={tasks.filter((item) => {
+            return item.complete === true;
+          })}
+          removeTask={removeTask}
+          isComplete={isComplete}
+        />
+      </div>
     </main>
   );
 }

@@ -1,18 +1,32 @@
 import React from "react";
 import styles from "./task-board.module.css";
 
-function TaskBoard({ name, tasksArray, removeTask }) {
+function TaskBoard({ name, tasksArray, removeTask, isComplete }) {
   return (
-    <div className={styles["task-board-container"]}>
+    <div
+      className={styles["task-board-container"]}
+      onDragOver={(e) => {
+        //   prevent do not allow cursor
+        e.preventDefault();
+      }}
+      onDrop={() => {
+        const draggable = document.querySelector(`.${styles["dragging"]}`);
+        isComplete(name, parseInt(draggable.dataset.index));
+      }}
+    >
       <div>
         <h1>{name}</h1>
         <span>{tasksArray.length}</span>
       </div>
-      {/* pass tasks that are not complete */}
-      {/* <pre>{JSON.stringify(tasksArray)}</pre> */}
       {tasksArray.map((obj, index) => {
         return (
           <div
+            onDragStart={(e) => {
+              e.currentTarget.classList.add(styles["dragging"]);
+            }}
+            onDragEnd={(e) => {
+              e.currentTarget.classList.remove(styles["dragging"]);
+            }}
             draggable="true"
             key={index + obj.title}
             className={styles["task"]}
