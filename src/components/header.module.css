@@ -1,8 +1,16 @@
 .header-container {
   background-color: white;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .header-container > h1 {
   font-size: 36px;
   font-weight: 500;
+}
+
+@media (min-width: 1280px) {
+  .header-container > h1 {
+    font-size: 64px;
+  }
 }
