@@ -2,7 +2,7 @@
 
 Doit is a ToDo app built with ReactJS, with drap and drop functionality.
 
-Users can add add tasks with a title and description. When a task is added it automatically goes in the Todo Taskboard, after the task as been completed the user can drag and drop the task to the Completed Taskboard. Once a task is added it can also be deleted.
+Users can add add tasks with a title and description. When a task is added it automatically goes in the Todo Taskboard, after the task as been completed the user can drag and drop the task to the Completed Taskboard. User can edit the task by double clicking on it. Once a task is added it can also be deleted.
 
 ## Built With
 
