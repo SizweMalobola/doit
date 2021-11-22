@@ -1,7 +1,13 @@
 import React from "react";
 import styles from "./task-board.module.css";
 
-function TaskBoard({ name, tasksArray, removeTask, isComplete }) {
+function TaskBoard({
+  name,
+  tasksArray,
+  removeTask,
+  isComplete,
+  getEditTaskIndex,
+}) {
   return (
     <div
       className={styles["task-board-container"]}
@@ -21,6 +27,10 @@ function TaskBoard({ name, tasksArray, removeTask, isComplete }) {
       {tasksArray.map((obj, index) => {
         return (
           <div
+            onDoubleClick={(e) => {
+              // return index of task that needs editing
+              getEditTaskIndex(index);
+            }}
             onDragStart={(e) => {
               e.currentTarget.classList.add(styles["dragging"]);
             }}
@@ -32,6 +42,7 @@ function TaskBoard({ name, tasksArray, removeTask, isComplete }) {
             className={styles["task"]}
             data-index={index}
           >
+            {/* edit */}
             <h4>{obj.title}</h4>
             <p>{obj.description}</p>
             <button onClick={() => removeTask(index)}>X</button>
